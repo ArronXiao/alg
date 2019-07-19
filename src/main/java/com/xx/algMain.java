@@ -12,6 +12,7 @@ import com.xx.alg.Permutations;
 import com.xx.alg.PhoneNumberCombine;
 import com.xx.alg.ReverseLink;
 import com.xx.alg.SearchRotate;
+import com.xx.alg.tree.RootFirtTreeTraversal;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +24,7 @@ public class algMain {
         list.add(new DoubleNumsSum());
         list.add(new LengthOfLongestSubstring());
         list.add(new NQueens());
+        list.add(new RootFirtTreeTraversal());
 
         runAll(list, false);
     }

@@ -12,6 +12,10 @@ public class PrintUtils {
         System.out.println(msg);
     }
 
+    public static  <T>  void print(T msg) {
+        System.out.println(msg);
+    }
+
     public static void print(Map msg) {
         for(Object key : msg.keySet()) {
             System.out.println("key: " + key + " value: " + msg.get(key));
