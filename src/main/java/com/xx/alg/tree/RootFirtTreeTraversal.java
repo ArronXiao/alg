@@ -51,11 +51,11 @@ public class RootFirtTreeTraversal extends AbstractAlg<BinaryTreeNode<Integer>> 
         while (!stack.isEmpty()) {
             BinaryTreeNode binaryTreeNode1Top = stack.pop();
             PrintUtils.print(binaryTreeNode1Top.value);
-            //入栈右子树
+            //入栈右树
             if (binaryTreeNode1Top.right != null) {
                 stack.push(binaryTreeNode1Top.right);
             }
-            //入栈左子树
+            //入栈坐树
             if (binaryTreeNode1Top.left != null) {
                 stack.push(binaryTreeNode1Top.left);
             }
@@ -64,9 +64,9 @@ public class RootFirtTreeTraversal extends AbstractAlg<BinaryTreeNode<Integer>> 
 
     private void centerRoot(BinaryTreeNode binaryTreeNode) {
         if (binaryTreeNode != null) {
-            firstRoot(binaryTreeNode.left);
+            centerRoot(binaryTreeNode.left);
             PrintUtils.print(binaryTreeNode.value);
-            firstRoot(binaryTreeNode.right);
+            centerRoot(binaryTreeNode.right);
         }
     }
 
@@ -77,13 +77,13 @@ public class RootFirtTreeTraversal extends AbstractAlg<BinaryTreeNode<Integer>> 
         }
         BinaryTreeNode currentBNode = binaryTreeNode;
         Stack<BinaryTreeNode> stack = new Stack<>();
-        stack.push(binaryTreeNode);
-        while (!stack.isEmpty()) {
-            if (currentBNode != null) {
+        while (!stack.isEmpty() || currentBNode!= null) {
+            while (currentBNode != null) {
                 stack.push(currentBNode);
                 currentBNode = currentBNode.left;
                 //保证所有的左节点先压栈
-            } else {
+            }
+            if (!stack.isEmpty()) {
                 currentBNode = stack.pop();
                 PrintUtils.print(currentBNode.value);
                 currentBNode = currentBNode.right;
@@ -93,8 +93,8 @@ public class RootFirtTreeTraversal extends AbstractAlg<BinaryTreeNode<Integer>> 
 
     private void afterRoot(BinaryTreeNode binaryTreeNode) {
         if (binaryTreeNode != null) {
-            firstRoot(binaryTreeNode.left);
-            firstRoot(binaryTreeNode.right);
+            afterRoot(binaryTreeNode.left);
+            afterRoot(binaryTreeNode.right);
             PrintUtils.print(binaryTreeNode.value);
         }
     }

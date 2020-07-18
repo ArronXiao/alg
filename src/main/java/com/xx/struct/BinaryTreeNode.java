@@ -13,11 +13,13 @@ public class BinaryTreeNode<T> {
 
     }
 
-    public void addLeft(T tmpvalue) {
+    public BinaryTreeNode addLeft(T tmpvalue) {
         this.left = new BinaryTreeNode<>(tmpvalue);
+        return this;
     }
 
-    public void addRight(T tmpvalue) {
+    public BinaryTreeNode addRight(T tmpvalue) {
         this.right = new BinaryTreeNode<>(tmpvalue);
+        return this;
     }
 }

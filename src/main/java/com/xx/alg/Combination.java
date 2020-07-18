@@ -3,7 +3,6 @@ package com.xx.alg;
 import com.xx.utils.PrintUtils;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Combination extends AbstractAlg<List<Integer>> {
@@ -37,7 +36,7 @@ public class Combination extends AbstractAlg<List<Integer>> {
             res.add(new ArrayList<>(tmpArrayList));
             return;
         }
-        for(int i = startIndex; i < origin.size(); i++) {
+        for (int i = startIndex; i < origin.size(); i++) {
             if (origin.get(i) > target) {
                 break;
             }

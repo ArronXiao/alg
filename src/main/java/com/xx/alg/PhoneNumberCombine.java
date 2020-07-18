@@ -31,17 +31,16 @@ public class PhoneNumberCombine extends AbstractAlg<HashMap<String,String>>{
         PrintUtils.print(arrayList);
     }
 
-    private void backTrace(String combineStr, String next_digist) {
+    private void backTrace(String combineStr, String next_digists) {
         if (combineStr.length() == inputString.length()) {
-//            arrayList.add(combineStr);
             PrintUtils.print("result: " + combineStr);
             return;
         }
-        String digist  = next_digist.substring(0,1);
+        String digist  = next_digists.substring(0,1);
         String map = phone.get(digist);
         for(int i = 0; i < map.length(); i++) {
-            String letter = phone.get(digist).substring(i, i + 1);
-            backTrace(combineStr + letter, next_digist.substring(1));
+            String letter = map.substring(i, i + 1);
+            backTrace(combineStr + letter, next_digists.substring(1));
         }
     }
 }
